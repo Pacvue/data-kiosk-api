@@ -5,7 +5,7 @@
     <artifactId>data-kiosk-api-2023-11-15</artifactId>
     <packaging>jar</packaging>
     <name>data-kiosk-api</name>
-    <version>3.0</version>
+    <version>3.1</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>

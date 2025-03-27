@@ -1,4 +1,4 @@
-# swagger-java-client
+# data-kiosk-api-2023-11-15
 
 Selling Partner API for Data Kiosk
 - API version: 2023-11-15
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>io.swagger</groupId>
-  <artifactId>swagger-java-client</artifactId>
+  <artifactId>data-kiosk-api-2023-11-15</artifactId>
   <version>3.0</version>
   <scope>compile</scope>
 </dependency>
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.swagger:swagger-java-client:3.0"
+compile "io.swagger:data-kiosk-api-2023-11-15:3.0"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/swagger-java-client-3.0.jar`
+* `target/data-kiosk-api-2023-11-15-3.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -72,10 +72,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.QueriesApi;
+import io.swagger.client.kiosk.*;
+import io.swagger.client.kiosk.auth.*;
+import io.swagger.client.kiosk.model.*;
+import io.swagger.client.kiosk.api.QueriesApi;
 
 import java.io.File;
 import java.util.*;
@@ -94,10 +94,10 @@ public class QueriesApiExample {
         }
     }
 }
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.QueriesApi;
+import io.swagger.client.kiosk.*;
+import io.swagger.client.kiosk.auth.*;
+import io.swagger.client.kiosk.model.*;
+import io.swagger.client.kiosk.api.QueriesApi;
 
 import java.io.File;
 import java.util.*;
@@ -117,10 +117,10 @@ public class QueriesApiExample {
         }
     }
 }
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.QueriesApi;
+import io.swagger.client.kiosk.*;
+import io.swagger.client.kiosk.auth.*;
+import io.swagger.client.kiosk.model.*;
+import io.swagger.client.kiosk.api.QueriesApi;
 
 import java.io.File;
 import java.util.*;
@@ -140,10 +140,10 @@ public class QueriesApiExample {
         }
     }
 }
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.QueriesApi;
+import io.swagger.client.kiosk.*;
+import io.swagger.client.kiosk.auth.*;
+import io.swagger.client.kiosk.model.*;
+import io.swagger.client.kiosk.api.QueriesApi;
 
 import java.io.File;
 import java.util.*;
@@ -167,10 +167,10 @@ public class QueriesApiExample {
         }
     }
 }
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.QueriesApi;
+import io.swagger.client.kiosk.*;
+import io.swagger.client.kiosk.auth.*;
+import io.swagger.client.kiosk.model.*;
+import io.swagger.client.kiosk.api.QueriesApi;
 
 import java.io.File;
 import java.util.*;

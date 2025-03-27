@@ -21,8 +21,8 @@ Cancels the query specified by the &#x60;queryId&#x60; parameter. Only queries w
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.QueriesApi;
+//import io.swagger.client.kiosk.ApiException;
+//import io.swagger.client.kiosk.api.QueriesApi;
 
 
 QueriesApi apiInstance = new QueriesApi();
@@ -65,8 +65,8 @@ Creates a Data Kiosk query request.  **Note:** The retention of a query varies b
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.QueriesApi;
+//import io.swagger.client.kiosk.ApiException;
+//import io.swagger.client.kiosk.api.QueriesApi;
 
 
 QueriesApi apiInstance = new QueriesApi();
@@ -110,8 +110,8 @@ Returns the information required for retrieving a Data Kiosk document&#x27;s con
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.QueriesApi;
+//import io.swagger.client.kiosk.ApiException;
+//import io.swagger.client.kiosk.api.QueriesApi;
 
 
 QueriesApi apiInstance = new QueriesApi();
@@ -155,8 +155,8 @@ Returns details for the Data Kiosk queries that match the specified filters. See
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.QueriesApi;
+//import io.swagger.client.kiosk.ApiException;
+//import io.swagger.client.kiosk.api.QueriesApi;
 
 
 QueriesApi apiInstance = new QueriesApi();
@@ -208,8 +208,8 @@ Returns query details for the query specified by the &#x60;queryId&#x60; paramet
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.QueriesApi;
+//import io.swagger.client.kiosk.ApiException;
+//import io.swagger.client.kiosk.api.QueriesApi;
 
 
 QueriesApi apiInstance = new QueriesApi();
