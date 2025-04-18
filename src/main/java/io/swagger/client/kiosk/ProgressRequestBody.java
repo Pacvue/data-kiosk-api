@@ -13,8 +13,8 @@
 package io.swagger.client.kiosk;
 
 import java.io.IOException;
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.RequestBody;
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.ForwardingSink;

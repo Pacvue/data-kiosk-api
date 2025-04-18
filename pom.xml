@@ -5,7 +5,7 @@
     <artifactId>data-kiosk-api-2023-11-15</artifactId>
     <packaging>jar</packaging>
     <name>data-kiosk-api</name>
-    <version>3.1</version>
+    <version>3.2</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>
@@ -183,12 +183,12 @@
             <version>${swagger-core-version}</version>
         </dependency>
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
+            <groupId>com.squareup.okhttp</groupId>
             <artifactId>okhttp</artifactId>
             <version>${okhttp-version}</version>
         </dependency>
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
+            <groupId>com.squareup.okhttp</groupId>
             <artifactId>logging-interceptor</artifactId>
             <version>${okhttp-version}</version>
         </dependency>
@@ -231,12 +231,12 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.5</gson-fire-version>
         <swagger-core-version>2.0.0</swagger-core-version>
-        <okhttp-version>4.10.0</okhttp-version>
+        <okhttp-version>2.7.5</okhttp-version>
         <gson-version>2.10.1</gson-version>
         <threetenbp-version>1.6.5</threetenbp-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.13.2</junit-version>
-        <sp-aa-java.version>3.0</sp-aa-java.version>
+        <sp-aa-java.version>2.0</sp-aa-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <distributionManagement>

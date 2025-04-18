@@ -69,7 +69,7 @@ public class QueriesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call cancelQueryCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call cancelQueryCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -96,15 +96,7 @@ public class QueriesApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+            this.addProgressListener(progressListener);
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -112,13 +104,13 @@ public class QueriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelQueryValidateBeforeCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call cancelQueryValidateBeforeCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         // verify the required parameter 'queryId' is set
         if (queryId == null) {
             throw new ApiException("Missing the required parameter 'queryId' when calling cancelQuery(Async)");
         }
 
-        okhttp3.Call call = cancelQueryCall(queryId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelQueryCall(queryId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -143,7 +135,7 @@ public class QueriesApi {
      * @throws LWAException If calls to fetch LWA access token fails
      */
     public ApiResponse<Void> cancelQueryWithHttpInfo(String queryId) throws ApiException,LWAException {
-        okhttp3.Call call = cancelQueryValidateBeforeCall(queryId, null, null);
+        com.squareup.okhttp.Call call = cancelQueryValidateBeforeCall(queryId, null, null);
         return apiClient.execute(call);
     }
 
@@ -156,7 +148,7 @@ public class QueriesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call cancelQueryAsync(String queryId, final ApiCallback<Void> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call cancelQueryAsync(String queryId, final ApiCallback<Void> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +169,7 @@ public class QueriesApi {
             };
         }
 
-        okhttp3.Call call = cancelQueryValidateBeforeCall(queryId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelQueryValidateBeforeCall(queryId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -190,7 +182,7 @@ public class QueriesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call createQueryCall(CreateQuerySpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call createQueryCall(CreateQuerySpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -216,15 +208,7 @@ public class QueriesApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+            this.addProgressListener(progressListener);
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -232,13 +216,13 @@ public class QueriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createQueryValidateBeforeCall(CreateQuerySpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call createQueryValidateBeforeCall(CreateQuerySpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new ApiException("Missing the required parameter 'body' when calling createQuery(Async)");
         }
 
-        okhttp3.Call call = createQueryCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createQueryCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -265,7 +249,7 @@ public class QueriesApi {
      * @throws LWAException If calls to fetch LWA access token fails
      */
     public ApiResponse<CreateQueryResponse> createQueryWithHttpInfo(CreateQuerySpecification body) throws ApiException,LWAException {
-        okhttp3.Call call = createQueryValidateBeforeCall(body, null, null);
+        com.squareup.okhttp.Call call = createQueryValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateQueryResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -279,7 +263,7 @@ public class QueriesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call createQueryAsync(CreateQuerySpecification body, final ApiCallback<CreateQueryResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call createQueryAsync(CreateQuerySpecification body, final ApiCallback<CreateQueryResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,7 +284,7 @@ public class QueriesApi {
             };
         }
 
-        okhttp3.Call call = createQueryValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createQueryValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateQueryResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -314,7 +298,7 @@ public class QueriesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getDocumentCall(String documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getDocumentCall(String documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -341,15 +325,7 @@ public class QueriesApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+            this.addProgressListener(progressListener);
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -357,13 +333,13 @@ public class QueriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDocumentValidateBeforeCall(String documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getDocumentValidateBeforeCall(String documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling getDocument(Async)");
         }
 
-        okhttp3.Call call = getDocumentCall(documentId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDocumentCall(documentId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -390,7 +366,7 @@ public class QueriesApi {
      * @throws LWAException If calls to fetch LWA access token fails
      */
     public ApiResponse<GetDocumentResponse> getDocumentWithHttpInfo(String documentId) throws ApiException,LWAException {
-        okhttp3.Call call = getDocumentValidateBeforeCall(documentId, null, null);
+        com.squareup.okhttp.Call call = getDocumentValidateBeforeCall(documentId, null, null);
         Type localVarReturnType = new TypeToken<GetDocumentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -404,7 +380,7 @@ public class QueriesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getDocumentAsync(String documentId, final ApiCallback<GetDocumentResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getDocumentAsync(String documentId, final ApiCallback<GetDocumentResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -425,7 +401,7 @@ public class QueriesApi {
             };
         }
 
-        okhttp3.Call call = getDocumentValidateBeforeCall(documentId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDocumentValidateBeforeCall(documentId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetDocumentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -443,7 +419,7 @@ public class QueriesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getQueriesCall(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getQueriesCall(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -479,15 +455,7 @@ public class QueriesApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+            this.addProgressListener(progressListener);
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -495,9 +463,9 @@ public class QueriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getQueriesValidateBeforeCall(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getQueriesValidateBeforeCall(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
 
-        okhttp3.Call call = getQueriesCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getQueriesCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, progressListener, progressRequestListener);
         return call;
 
     }
@@ -532,7 +500,7 @@ public class QueriesApi {
      * @throws LWAException If calls to fetch LWA access token fails
      */
     public ApiResponse<GetQueriesResponse> getQueriesWithHttpInfo(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken) throws ApiException,LWAException {
-        okhttp3.Call call = getQueriesValidateBeforeCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, null, null);
+        com.squareup.okhttp.Call call = getQueriesValidateBeforeCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, null, null);
         Type localVarReturnType = new TypeToken<GetQueriesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -550,7 +518,7 @@ public class QueriesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getQueriesAsync(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ApiCallback<GetQueriesResponse> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getQueriesAsync(List<String> processingStatuses, Integer pageSize, OffsetDateTime createdSince, OffsetDateTime createdUntil, String paginationToken, final ApiCallback<GetQueriesResponse> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -571,7 +539,7 @@ public class QueriesApi {
             };
         }
 
-        okhttp3.Call call = getQueriesValidateBeforeCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getQueriesValidateBeforeCall(processingStatuses, pageSize, createdSince, createdUntil, paginationToken, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetQueriesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -585,7 +553,7 @@ public class QueriesApi {
      * @throws ApiException If fail to serialize the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getQueryCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getQueryCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -612,15 +580,7 @@ public class QueriesApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
+            this.addProgressListener(progressListener);
         }
 
         String[] localVarAuthNames = new String[] {  };
@@ -628,13 +588,13 @@ public class QueriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getQueryValidateBeforeCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
+    private com.squareup.okhttp.Call getQueryValidateBeforeCall(String queryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, LWAException {
         // verify the required parameter 'queryId' is set
         if (queryId == null) {
             throw new ApiException("Missing the required parameter 'queryId' when calling getQuery(Async)");
         }
 
-        okhttp3.Call call = getQueryCall(queryId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getQueryCall(queryId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -661,7 +621,7 @@ public class QueriesApi {
      * @throws LWAException If calls to fetch LWA access token fails
      */
     public ApiResponse<Query> getQueryWithHttpInfo(String queryId) throws ApiException,LWAException {
-        okhttp3.Call call = getQueryValidateBeforeCall(queryId, null, null);
+        com.squareup.okhttp.Call call = getQueryValidateBeforeCall(queryId, null, null);
         Type localVarReturnType = new TypeToken<Query>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -675,7 +635,7 @@ public class QueriesApi {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @throws LWAException If calls to fetch LWA access token fails
      */
-    public okhttp3.Call getQueryAsync(String queryId, final ApiCallback<Query> callback) throws ApiException, LWAException {
+    public com.squareup.okhttp.Call getQueryAsync(String queryId, final ApiCallback<Query> callback) throws ApiException, LWAException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -696,7 +656,7 @@ public class QueriesApi {
             };
         }
 
-        okhttp3.Call call = getQueryValidateBeforeCall(queryId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getQueryValidateBeforeCall(queryId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Query>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -765,5 +725,28 @@ public class QueriesApi {
                 .setBasePath(endpoint)
                 .setRateLimiter(rateLimitConfiguration));
         }
+    }
+
+    private void addProgressListener(final ProgressResponseBody.ProgressListener progressListener) {
+        apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            @Override
+            public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+            }
+        });
+//        apiClient.setHttpClient(
+//            apiClient.getHttpClient().newBuilder()
+//                .addNetworkInterceptor(new okhttp3.Interceptor() {
+//                    @Override
+//                    public okhttp3.Response intercept(Chain chain) throws IOException {
+//                        okhttp3.Response originalResponse = chain.proceed(chain.request());
+//                        return originalResponse.newBuilder()
+//                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+//                            .build();
+//                    }
+//                }).build());
     }
 }

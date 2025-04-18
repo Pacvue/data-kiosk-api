@@ -15,7 +15,7 @@ package io.swagger.client.kiosk.auth;
 import java.util.List;
 import java.util.Map;
 import io.swagger.client.kiosk.Pair;
-import okhttp3.Credentials;
+import com.squareup.okhttp.Credentials;
 
 public class HttpBasicAuth implements Authentication {
     private String username;
